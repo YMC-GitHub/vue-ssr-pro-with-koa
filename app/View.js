@@ -3,7 +3,9 @@ const path = require('path')
 const LRU = require('lru-cache')
 
 const config = require('../build/server.config.js')
-const isProd = true
+process.env.NODE_ENV = 'production'
+const isProd = process.env.NODE_ENV === 'production'
+
 
 const rootPath = path.resolve(__dirname, '../')
 

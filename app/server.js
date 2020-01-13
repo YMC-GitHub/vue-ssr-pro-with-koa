@@ -10,6 +10,7 @@ const config = require('../build/server.config.js')
 
 global.Promise = bluebird
 
+process.env.NODE_ENV = 'production'
 const isProd = process.env.NODE_ENV === 'production'
 
 const rootPath = path.resolve(__dirname, '../')
