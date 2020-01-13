@@ -6,7 +6,7 @@ const compression = require('koa-compress')
 const logger = require('koa-logger')
 const bluebird = require('bluebird')
 const chalk = require('chalk')
-const config = require('../build/server.js')
+const config = require('../build/server.config.js')
 
 global.Promise = bluebird
 
