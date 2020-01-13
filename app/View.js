@@ -2,8 +2,11 @@ const fs = require('fs')
 const path = require('path')
 const LRU = require('lru-cache')
 
-const config = require('../build/server.config.js')
-process.env.NODE_ENV = 'production'
+const config = require('../build/server.config')
+
+if (process.env.NODE_ENV === undefined) {
+  process.env.NODE_ENV = 'production'
+}
 const isProd = process.env.NODE_ENV === 'production'
 
 
@@ -11,9 +14,9 @@ const rootPath = path.resolve(__dirname, '../')
 
 /* eslint-disable import/no-dynamic-require */
 const defaults = {
-  template: config.index,
-  bundle: path.resolve(rootPath, 'dist/vue-ssr-server-bundle.json'),
-  clientManifest: path.resolve(rootPath, 'dist/vue-ssr-client-manifest.json')
+  template: isProd ? config.build.index : config.dev.index,
+  bundle: isProd ? `${config.build.www}/vue-ssr-server-bundle.json` : `${config.dev.www}/vue-ssr-server-bundle.json`,
+  clientManifest: isProd ? `${config.build.www}/vue-ssr-client-manifest.json` : `${config.dev.www}/vue-ssr-client-manifest.json`
 }
 class View {
   constructor(app, options = {}) {
