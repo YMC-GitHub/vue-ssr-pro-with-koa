@@ -20,17 +20,17 @@ get detail [here](./note/dir-construtor.md)
 
 ## some config
 
-`config/server.js`
+`config/server.config.js`
 
-01.where the host is? [config](./config/server.js#L5)
+01.where the host is? [config](./config/server.config.js#L5)
 
-02.which port will use?  [config](./config/server.js#L7)
+02.which port will use?  [config](./config/server.config.js#L7)
 
-03.where the html file to serve?  [config](./config/server.js#L9)
+03.where the html file to serve?  [config](./config/server.config.js#L9)
 
-04.what is the name of html files?   [config](./config/server.js#11)
+04.what is the name of html files?   [config](./config/server.config.js#11)
 
-05.where the static file to serve?   [config](./config/server.js#13)
+05.where the static file to serve?   [config](./config/server.config.js#13)
 
 ## some command
 
